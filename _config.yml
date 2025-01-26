@@ -16,7 +16,7 @@ timezone:
 
 title: Arjit Praveen # the main title
 
-tagline: Computer Science, Machile Learning, Quantum Physics, Climate Science # it will display as the subtitle
+tagline: Computer Science student and Climate Researcher # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   An academic blog with posts about computer science, climate science and machine learning
@@ -97,7 +97,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://avatars.githubusercontent.com/u/196506547?v=4
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
