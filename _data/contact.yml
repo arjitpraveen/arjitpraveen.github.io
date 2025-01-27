@@ -1,4 +1,5 @@
 #  The contact options.
+#debug
 
 - type: github
   icon: "fab fa-github"
