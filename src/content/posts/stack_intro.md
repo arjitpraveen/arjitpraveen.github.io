@@ -1,7 +1,7 @@
 ---
-title: Stack Memory
+title: Introduction to Stack Memory
 published: 2025-10-20
-description: 'An introduction to the stack memory'
+description: 'An introduction to stack memory'
 image: ''
 tags: [assembly, stack, C]
 category: 'notes'
