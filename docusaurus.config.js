@@ -14,7 +14,6 @@ const config = {
   organizationName: 'arjitpraveen',
   projectName: 'arjitpraveen.github.io',
   trailingSlash: false,
-  deploymentBranch: 'main',
   
   onBrokenLinks: 'throw',
 
