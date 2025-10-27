@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkarjitpraveen=globalThis.webpackChunkarjitpraveen||[]).push([[9647],{7121:(e,r,a)=>{a.r(r),a.d(r,{default:()=>l});a(6540);var s=a(4164),n=a(7559),t=a(5500),u=a(2831),c=a(4514),i=a(4848);function l(e){return(0,i.jsx)(t.e3,{className:(0,s.A)(n.G.wrapper.docsPages),children:(0,i.jsx)(c.A,{children:(0,u.v)(e.route.routes)})})}}}]);
