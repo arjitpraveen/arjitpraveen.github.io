@@ -8,6 +8,21 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+
+  height: 600px;
+
+  background-image: url('/img/stars.gif');
+  background-repeat: repeat;          /* tile the GIF */
+  background-size: auto;              /* don’t scale it up */
+  image-rendering: pixelated;         /* keep it crisp and blocky */
+  background-position: top left;
+  background-attachment: fixed;
+
+  background-color: rgba(29, 0, 36, 0.25);
+  background-blend-mode: multiply;
+
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 @media screen and (max-width: 996px) {
@@ -20,4 +35,66 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.win95Button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 240px;
+  height: 54px;
+  padding: 0 16px;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  background: #c0c0c0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #565656;
+  border-right: 1px solid #565656;
+  box-shadow: 
+    inset 1px 1px 0 #ffffff,
+    inset -3px -3px 0 #565656;
+  cursor: default;
+  user-select: none;
+  overflow: hidden;
+}
+
+.win95Button span {
+  position: relative;
+  z-index: 1;
+}
+
+.win95Button:hover {
+  background: #c0c0c0;
+}
+
+.win95Button:active {
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  box-shadow: 
+    inset 1px 1px 0 #808080,
+    inset -1px -1px 0 #dfdfdf;
+  padding: 1px 15px 0 17px;
+  transform: translate(1px, 1px);
+}
+
+.win95Button:focus {
+  outline: 1px dotted #000;
+  outline-offset: -4px;
+}
+
+.winIcon {
+  width: 43px;
+  height: 43px;
+  margin-right: 20px;
+  /* background: url('https://img.icons8.com/?size=100&id=wG9MSO7XoMy2&format=png&color=000000'); */
+  background: url(/img/icons8-windows-95.svg);
+  background-size: contain;
 }

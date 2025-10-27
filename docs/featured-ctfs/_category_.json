@@ -1,0 +1,8 @@
+{
+  "label": "Featured CTF write-ups",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Here are write-ups of some of my favourite CTFs :)"
+  }
+}
