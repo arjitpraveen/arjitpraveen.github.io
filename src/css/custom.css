@@ -1,30 +1,93 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
-:root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
-
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* --- Gruvbox Dark Hard Theme --- */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-color: #1d2021; /* darker base background */
+  --ifm-navbar-background-color: #1d2021;
+  --ifm-footer-background-color: #1d2021;
+  --ifm-font-color-base: #ebdbb2; /* soft beige */
+  --ifm-heading-color: #fbf1c7;
+
+  /* Gruvbox accent tones */
+  --ifm-color-primary: #b8bb26; /* green-yellow */
+  --ifm-color-primary-dark: #98971a;
+  --ifm-color-primary-darker: #79740e;
+  --ifm-color-primary-light: #fabd2f; /* golden yellow */
+  --ifm-color-primary-lighter: #d79921;
+  --ifm-color-primary-lightest: #fabd2f;
+
+  /* Code & block backgrounds */
+  --docusaurus-highlighted-code-line-bg: rgba(235, 219, 178, 0.05);
+  --ifm-pre-background: #282828;
+  --ifm-code-background: #282828;
+
+  /* Borders and subtle structure */
+  --ifm-toc-border-color: #3c3836;
+  --ifm-table-border-color: #3c3836;
+  --ifm-blockquote-border-color: #504945;
 }
+
+/* Sidebar styling */
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: #1a1b1b;
+  border-right: 1px solid #3c3836;
+}
+
+/* Navbar */
+[data-theme='dark'] .navbar {
+  background-color: #1a1b1b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Active sidebar link */
+[data-theme='dark'] .menu__link--active {
+  background-color: #3c3836;
+  color: #fabd2f;
+  border-radius: 6px;
+}
+
+/* Code text color */
+[data-theme='dark'] code {
+  color: #d79921;
+}
+
+/* Optional: slightly desaturate link colors */
+[data-theme='dark'] a {
+  color: #83a598;
+}
+
+[data-theme='dark'] a:hover {
+  color: #b8bb26;
+  text-decoration: none;
+}
+
+/* --- Gruvbox Dark Hard Footer --- */
+[data-theme='dark'] footer.footer {
+  background-color: #1d2021; /* same as main background */
+  border-top: 1px solid #3c3836;
+  color: #ebdbb2;
+}
+
+/* Footer links */
+[data-theme='dark'] .footer__link-item {
+  color: #bdae93; /* muted beige-gray */
+}
+
+[data-theme='dark'] .footer__link-item:hover {
+  color: #fabd2f; /* warm yellow highlight */
+  text-decoration: none;
+}
+
+/* Footer titles */
+[data-theme='dark'] .footer__title {
+  color: #fbf1c7; /* soft cream for section headers */
+}
+
+/* Copyright text */
+[data-theme='dark'] .footer__bottom {
+  color: #a89984;
+  border-top: 1px solid #3c3836;
+}
+
+.temp{
+  color: rgb(160, 0, 0);
+}
+

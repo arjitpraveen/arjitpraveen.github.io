@@ -46,6 +46,12 @@ const config = {
     ],
   ],
 
+  themes: ['@docusaurus/theme-mermaid'],
+
+  markdown: {
+    mermaid: true,
+  },
+
   plugins: [
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
@@ -77,30 +83,6 @@ const config = {
           { href: 'https://open.spotify.com/playlist/3iwGDEGFGVsPCLvbZde1nn?si=47d7834e5e014679', label: 'Da Beats', position: 'right' },
         ],
       },
-      // footer: {
-      //   style: 'dark',
-      //   links: [
-      //     { title: 'Docs', items: [{ label: 'Tutorial', to: '/docs/intro' }] },
-      //     // { title: 'Community', items: [
-      //     //     { label: 'Stack Overflow', href: 'https://stackoverflow.com/questions/tagged/docusaurus' },
-      //     //     { label: 'Discord', href: 'https://discordapp.com/invite/docusaurus' },
-      //     //     { label: 'X', href: 'https://x.com/docusaurus' },
-      //     //   ] },
-      //     { title: 'More', items: [
-      //         { label: 'Blog', to: '/blog' },
-      //         { label: 'GitHub', href: 'https://github.com/arjitpraveen' },
-      //       ] },
-      //     { title: 'About Me', items: [
-      //         { html: `
-      //             <p style="font-size: 0.9rem; margin: 0;">
-      //               I'm a retro-loving dev who still runs Windows 95 in a VM. 
-      //               I code, collect floppy disks, and believe the Start button is peak UX.
-      //             </p>
-      //         `,},
-      //       ] },
-      //   ],
-      //   copyright: `Copyright © ${new Date().getFullYear()} Made with 💖 by Arjit. Built with Docusaurus.`,
-      // },
       footer: {
         style: 'dark',
         links: [
@@ -109,40 +91,18 @@ const config = {
               { label: 'Blog', to: '/blog' },
               { label: 'GitHub', href: 'https://github.com/arjitpraveen' },
             ] },
-          {
-            title: 'About Me',
-            items: [
-              {
-                html: `
-                  <div style="
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    font-family: 'MS Sans Serif', Tahoma, sans-serif;
-                    font-size: 11px;
-                    line-height: 1.4;
-                  ">
-                    <img 
-                      src="https://media.licdn.com/dms/image/v2/D4D03AQEyfZ7sGr6kog/profile-displayphoto-scale_400_400/B4DZfjWKaeHMAg-/0/1751865928444?e=1762992000&v=beta&t=ljFJlsM9XrgwyaO9p5KQpcJJL8xaDGu7ol5MurqxpL8" 
-                      alt="Arjit" 
-                      width="64" 
-                      height="64" 
-                    />
-                    <div>
-                      <strong>Arjit Praveen</strong><br/>
-                      Cybersecurity enthusiast proficient in Python, Bash and C, <br/>
-                      Interested in penetration testing and malware analysis. <br/> 
-                      Enjoys participating in CTF competitions, doing math and reading in pastime.
-                    </div>
-                  </div>
-                `,
-              },
-            ],
-          },
+          { title: 'About Me', items: [
+              { html: `
+                  <p style="font-size: 0.9rem; margin: 0;">
+                    Cybersecurity enthusiast and aspiring <span style="color:red;">red teamer</span> with a passion in pentesting and malware analysis. I'm proficient in Python, bash and C. And enjoy participating in CTFs, reading, and doing math.
+                  </p>
+              `,},
+            ] },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Made with 💖 by Arjit. Built with Docusaurus.`,
       },
-      prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
+      
+      prism: { theme: prismThemes.github, darkTheme: prismThemes.vsDark },
     }),
 };
 

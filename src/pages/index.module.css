@@ -49,46 +49,43 @@
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
   font-weight: bold;
-  color: #000;
+  color: #ebdbb2; /* Gruvbox light text */
   text-decoration: none;
-  background: #c0c0c0;
-  border-top: 1px solid #ffffff;
-  border-left: 1px solid #ffffff;
-  border-bottom: 1px solid #565656;
-  border-right: 1px solid #565656;
-  box-shadow: 
-    inset 1px 1px 0 #ffffff,
-    inset -3px -3px 0 #565656;
+  background: #3c3836; /* Gruvbox dark-gray background */
+  border-top: 1px solid #fbf1c7;  /* lighter top/left borders */
+  border-left: 1px solid #fbf1c7;
+  border-bottom: 1px solid #1d2021; /* darker bottom/right */
+  border-right: 1px solid #1d2021;
+  box-shadow:
+    inset 1px 1px 0 #665c54,
+    inset -3px -3px 0 #1d2021;
   cursor: default;
   user-select: none;
   overflow: hidden;
 }
 
-.win95Button span {
-  position: relative;
-  z-index: 1;
-}
-
 .win95Button:hover {
-  background: #c0c0c0;
+  background: #504945;
+  color: #fabd2f; /* bright gold hover text */
 }
 
 .win95Button:active {
-  border-top: 1px solid #808080;
-  border-left: 1px solid #808080;
-  border-bottom: 1px solid #ffffff;
-  border-right: 1px solid #ffffff;
-  box-shadow: 
-    inset 1px 1px 0 #808080,
-    inset -1px -1px 0 #dfdfdf;
+  border-top: 1px solid #1d2021;
+  border-left: 1px solid #1d2021;
+  border-bottom: 1px solid #fbf1c7;
+  border-right: 1px solid #fbf1c7;
+  box-shadow:
+    inset 1px 1px 0 #1d2021,
+    inset -1px -1px 0 #bdae93;
   padding: 1px 15px 0 17px;
   transform: translate(1px, 1px);
 }
 
 .win95Button:focus {
-  outline: 1px dotted #000;
+  outline: 1px dotted #fabd2f;
   outline-offset: -4px;
 }
+
 
 .winIcon {
   width: 43px;

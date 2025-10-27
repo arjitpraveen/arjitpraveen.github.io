@@ -1,47 +1,18 @@
 ---
-sidebar_position: 1
+sidebar_label: "Introduction"
 ---
+# Hey there!
 
-# Tutorial Intro
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3OHFuczJhdnN3aXE5MzViMmg0aDM4djF3Y3o2c3V4eW1nazdtem1payZlcD12MV9naWZzX3NlYXJjaCZjdD1n/F9xSlEGUPObba/giphy.gif" width="300px"/>
 
-Let's discover **Docusaurus in less than 5 minutes**.
+I'm Arjit Praveen, an undergrad CS student and a cybersecurity enthusiast. I've dedicated this entire blog to documenting my learning progress and to share it to those it might help. I've sectioned the site into:
 
-## Getting Started
+1. [Notes](/docs/category/cybersecurity-notes): General notes on cybersecurity topics.
+2. [Featured CTF write-ups](/docs/category/featured-ctf-write-ups): Noteable write-ups of my favourite CTF competitions
+3. [Case studies](/docs/category/case-studies): My case studies on infamous cybercrimes, among many other things I'll be writing about.
+4. [Projects/Activities](): Featured projects. You can find all of them on my [github]().
+5. [Misc](): Miscellaneous stuff. Mostly non-cybersecurity notes of whatever I find interesting.
+6. ["Extended" Blog](): More stuff which needed it's own section.
 
-Get started by **creating a new site**.
+## Navigating this blog
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
