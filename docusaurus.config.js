@@ -128,7 +128,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Made with 💖 by Arjit. Built with Docusaurus.`,
       },
       
-      prism: { theme: prismThemes.github, darkTheme: prismThemes.vsDark },
+      prism: { theme: prismThemes.github, darkTheme: prismThemes.vsDark, additionalLanguages: ['bash'] },
     }),
 };
 

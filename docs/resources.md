@@ -1,5 +1,6 @@
 ---
 sidebar_label: "Learning Resources"
+sidebar_position: 2
 ---
 
 ## CTF stuff

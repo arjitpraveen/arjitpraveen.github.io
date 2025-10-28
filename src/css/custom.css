@@ -3,8 +3,10 @@
   --ifm-background-color: #1d2021; /* darker base background */
   --ifm-navbar-background-color: #1d2021;
   --ifm-footer-background-color: #1d2021;
-  --ifm-font-color-base: #ebdbb2; /* soft beige */
-  --ifm-heading-color: #fbf1c7;
+  /* --ifm-font-color-base: #ebdbb2;  */
+  /* --ifm-heading-color: #fbf1c7; */
+  --ifm-font-color-base: #fff8e7;
+  --ifm-heading-color: #fff8e7;
 
   /* Gruvbox accent tones */
   --ifm-color-primary: #b8bb26; /* green-yellow */
