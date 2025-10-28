@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkarjitpraveen=globalThis.webpackChunkarjitpraveen||[]).push([[2933],{7272:a=>{a.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"archive"}')}}]);
