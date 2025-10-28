@@ -22,6 +22,7 @@ const config = {
     locales: ['en'],
   },
 
+  // ============================================== PRESETS ==============================================
   presets: [
     [
       'classic',
@@ -64,6 +65,28 @@ const config = {
         explicitSearchResultPath: true,
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ctf-guide',
+        path: 'ctf-guide',
+        routeBasePath: 'ctf-guide',
+        sidebarPath: require.resolve('./sidebars_ctf.js'),
+        editUrl:
+          'https://github.com/arjitpraveen/arjitpraveen.github.io/edit/main/ctf-guide/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'archive',
+        path: 'archive',
+        routeBasePath: 'archive',
+        sidebarPath: require.resolve('./sidebars_archive.js'),
+        editUrl:
+          'https://github.com/arjitpraveen/arjitpraveen.github.io/edit/main/archive-notes/',
+      },
+    ],
   ],
 
   themeConfig:
@@ -75,9 +98,12 @@ const config = {
         title: 'Arjit Praveen',
         logo: { alt: 'My Site Logo', src: 'img/tacnayn.webp' },
         items: [
+          // ----------- left links -----------
           { type: 'docSidebar', sidebarId: 'tutorialSidebar', position: 'left', label: 'Reads' },
           { to: '/blog', label: 'Blog', position: 'left' },
-          { href: 'https://www.linkedin.com/in/arjitpraveen', label: 'Stack Smash Squad blog', position: 'right' },
+          { to: '/ctf-guide/intro', label: 'CTF Guide', position: 'left' },
+          { to: '/archive/intro', label: 'Archive', position: 'left' },
+          // ---------- right links ----------
           { href: 'https://www.linkedin.com/in/arjitpraveen', label: 'Linkedin', position: 'right' },
           { href: 'https://github.com/arjitpraveen', label: 'GitHub', position: 'right' },
           { href: 'https://open.spotify.com/playlist/3iwGDEGFGVsPCLvbZde1nn?si=47d7834e5e014679', label: 'Da Beats', position: 'right' },
