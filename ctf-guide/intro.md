@@ -18,7 +18,7 @@ graph TD
 
 The purpose of this blog is to provide beginners with fundamental knowledge in CTFs and introduce them to the tools they can use to solve these challenges. 
 
-A little side note, while **steganography** fallse under Forensics, we will have a separate section for it. You can find it on the [sidebar](/docs/Steganography/intro.md)! I will also link several external resources throughout the articles if you'd like to further study the concepts mentioned.
+A little side note, while **steganography** fallse under Forensics, we will have a separate section for it. You can find it on the [sidebar](/ctf-guide/Steganography/intro.md)! I will also link several external resources throughout the articles if you'd like to further study the concepts mentioned.
 
 :::tip[info]
 
