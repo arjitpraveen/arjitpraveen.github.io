@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkarjitpraveen=globalThis.webpackChunkarjitpraveen||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"hello","permalink":"/blog/2025/10/31/intro","unlisted":false,"date":"2025-10-31T00:00:00.000Z"}]}')}}]);
