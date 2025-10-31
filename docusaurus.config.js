@@ -65,7 +65,8 @@ const config = {
         explicitSearchResultPath: true,
       },
     ],
-    'docusaurus-plugin-image-zoom',  // ← Fixed: no array, no comma
+    'docusaurus-plugin-image-zoom',
+    'docusaurus-graph',
     [
       '@docusaurus/plugin-content-docs',
       {
