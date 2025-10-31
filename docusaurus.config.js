@@ -65,6 +65,7 @@ const config = {
         explicitSearchResultPath: true,
       },
     ],
+    'docusaurus-plugin-image-zoom',  // ← Fixed: no array, no comma
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -94,41 +95,66 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       colorMode: { defaultMode: 'dark', disableSwitch: true, respectPrefersColorScheme: true },
+
+      // ZOOM CONFIG — MUST BE INSIDE themeConfig
+      zoom: {
+        selector: '.markdown img',
+        background: {
+          light: 'rgba(255, 255, 255, 0.95)',
+          dark: 'rgba(25, 25, 25, 0.95)',
+        },
+        config: {
+          margin: 24,
+          scrollOffset: 80,
+        },
+      },
+
       navbar: {
         title: 'Arjit Praveen',
         logo: { alt: 'My Site Logo', src: 'img/tacnayn.webp' },
         items: [
-          // ----------- left links -----------
           { type: 'docSidebar', sidebarId: 'tutorialSidebar', position: 'left', label: 'Reads' },
           { to: '/blog', label: 'Blog', position: 'left' },
           { to: '/ctf-guide/intro', label: 'CTF Guide', position: 'left' },
           { to: '/archive/intro', label: 'Archive', position: 'left' },
-          // ---------- right links ----------
           { href: 'https://www.linkedin.com/in/arjitpraveen', label: 'Linkedin', position: 'right' },
           { href: 'https://github.com/arjitpraveen', label: 'GitHub', position: 'right' },
           { href: 'https://open.spotify.com/playlist/3iwGDEGFGVsPCLvbZde1nn?si=47d7834e5e014679', label: 'Da Beats', position: 'right' },
         ],
       },
+
       footer: {
         style: 'dark',
         links: [
           { title: 'Docs', items: [{ label: 'Tutorial', to: '/docs/intro' }] },
-          { title: 'More', items: [
+          { 
+            title: 'More', 
+            items: [
               { label: 'Blog', to: '/blog' },
               { label: 'GitHub', href: 'https://github.com/arjitpraveen' },
-            ] },
-          { title: 'About Me', items: [
-              { html: `
+            ] 
+          },
+          { 
+            title: 'About Me', 
+            items: [
+              { 
+                html: `
                   <p style="font-size: 0.9rem; margin: 0;">
                     Cybersecurity enthusiast and aspiring <span style="color:red;">red teamer</span> with a passion in pentesting and malware analysis. I'm proficient in Python, bash and C. And enjoy participating in CTFs, reading, and doing math.
                   </p>
-              `,},
-            ] },
+                `,
+              },
+            ] 
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Made with 💖 by Arjit. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Made with Arjit. Built with Docusaurus.`,
       },
       
-      prism: { theme: prismThemes.github, darkTheme: prismThemes.vsDark, additionalLanguages: ['bash'] },
+      prism: { 
+        theme: prismThemes.github, 
+        darkTheme: prismThemes.vsDark, 
+        additionalLanguages: ['bash'] 
+      },
     }),
 };
 
