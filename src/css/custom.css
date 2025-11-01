@@ -31,6 +31,7 @@
 [data-theme='dark'] .theme-doc-sidebar-container {
   background-color: #1a1b1b;
   border-right: 1px solid #3c3836;
+  background-image: url("/img/cartographer.png");
 }
 
 /* Navbar */
@@ -92,4 +93,5 @@
 .temp{
   color: rgb(160, 0, 0);
 }
+
 
