@@ -29,9 +29,10 @@
 
 /* Sidebar styling */
 [data-theme='dark'] .theme-doc-sidebar-container {
-  background-color: #1a1b1b;
+  background-color: #1a1b1a;
   border-right: 1px solid #3c3836;
   background-image: url("/img/cartographer.png");
+  /* background-image: url("https://www.transparenttextures.com/patterns/green-fibers.png"); */
 }
 
 /* Navbar */

@@ -97,6 +97,12 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       colorMode: { defaultMode: 'dark', disableSwitch: true, respectPrefersColorScheme: true },
 
+      docs: {
+    sidebar: {
+      hideable: true,              // enables the sidebar toggle button
+      autoCollapseCategories: true // optional: collapses other categories when one opens
+    },
+  },
       // ZOOM CONFIG — MUST BE INSIDE themeConfig
       zoom: {
         selector: '.markdown img',
@@ -154,7 +160,7 @@ const config = {
       prism: { 
         theme: prismThemes.github, 
         darkTheme: prismThemes.vsDark, 
-        additionalLanguages: ['bash'] 
+        additionalLanguages: ['bash','http'] 
       },
     }),
 };

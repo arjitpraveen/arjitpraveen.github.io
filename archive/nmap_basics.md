@@ -1,5 +1,7 @@
 ---
 sidebar_label: "Nmap Basics"
+sidebar_position: 2
+
 ---
 
 # Nmap Basics
