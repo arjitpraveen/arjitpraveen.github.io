@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Nmap Basics
 
-![](/img/nmap-banner.gif)
+![](/img-archive/nmap-banner.gif)
 
 **Nmap** (Network Mapper) is a **network discovery tool** used to discover devices and services on a computer network. It helps us answer 3 core questions: What hosts are up? *(Host Discovery)*, what ports are open? *(Port Scanning)*, what services run on these ports? *(Services & version detection)*. It's also an essential tool for **reconnaissance**.It uses multiple ways to specify its target:
 

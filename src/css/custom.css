@@ -29,11 +29,18 @@
 
 /* Sidebar styling */
 [data-theme='dark'] .theme-doc-sidebar-container {
-  background-color: #1a1b1a;
+  /* background-color: #1a1b1a; */
+  /* background-color: #100f0f; */
   border-right: 1px solid #3c3836;
-  background-image: url("/img/cartographer.png");
-  /* background-image: url("https://www.transparenttextures.com/patterns/green-fibers.png"); */
+  background-image: 
+  linear-gradient(rgba(29, 32, 33, 0.4), rgba(29, 32, 33, 0.4)),
+  url("/img/otis-redding.png");
+  /* url("https://www.transparenttextures.com/patterns/polonez-pattern.png"); */
 }
+
+/* [data-theme='dark'] .col--3{
+  background-image: url("/img/stars.gif");
+} */
 
 /* Navbar */
 [data-theme='dark'] .navbar {
@@ -45,7 +52,11 @@
 [data-theme='dark'] .menu__link--active {
   background-color: #3c3836;
   color: #fabd2f;
-  border-radius: 6px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+[data-theme='dark'] .menu__link:hover {
+  border-radius: 5px 0px 0px 5px;
 }
 
 /* Code text color */
@@ -91,8 +102,9 @@
   border-top: 1px solid #3c3836;
 }
 
+
+
 .temp{
   color: rgb(160, 0, 0);
 }
-
 
