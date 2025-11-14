@@ -1,0 +1,8 @@
+{
+  "label": "Tryhackme challenges",
+  "position": 99,
+  "link": {
+    "type": "generated-index",
+    "description": "Write-ups of TryHackMe challenges"
+  }
+}
