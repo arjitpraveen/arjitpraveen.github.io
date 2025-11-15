@@ -5,6 +5,8 @@ sidebar_position: 1
 
 # Crack the hash I
 
+This is my write-up for TryHackMe's [Crack the hash](https://tryhackme.com/room/crackthehash) and [Crack the hash 2](https://tryhackme.com/room/crackthehashlevel2) challenges, two of which are free! Check them out if you wan't to follow along this post. However I'd recommend trying them out yourself first :) 
+
 ## Level 1
 
 Can you complete the level 1 tasks by cracking the hashes?
@@ -35,7 +37,7 @@ wget https://github.com/danielmiessler/SecLists/raw/master/Passwords/Leaked-Data
 ```
 
 :::warning
-bcrypt is made to be deliberately slow to crack (slow is quite an understatement for how truly slow it is to crack!). A defining feature of bcrypt is that it's memory and GPU-unfriendly especially with higher work factors/costs. Run at your own risk. 
+bcrypt is made to be deliberately slow to crack (which is quite an understatement for how abysmally slow it can be). A defining feature of bcrypt is that it's memory and GPU-unfriendly especially with higher work factors/costs. Ensure you have the proper drivers installed and that you're running it in a virtual machine. Run at your own risk. 
 :::
 
 Lucky for me, I've been given a hint, the answer formats is `****`. Here's a script I made to filter 4 character passwords from rockyou.txt

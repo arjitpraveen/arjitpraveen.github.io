@@ -188,3 +188,49 @@ hydra -l admin -P /usr/share/wordlists/rockyou.txt example.com http-post-form "/
 ---
 
 ## John The Ripper
+
+### Prerequisites: Hashing
+
+**Hashing** is the process of taking an input of arbitrary size and passing it through a **hash function** to return a **hash value** of fixed length.
+
+You might be familiar with hash values when downloading some kind of application from the internet. We can validate its authenticity by running a hash function through in-built command-line utilities like `md5sum` and `sha256sum` then comparing the result with what's given from the source. If they match, we can say with high certainty that the 2 files are identical. Even the slightest change in input can cause a significant change in output. Take for example 2 letters, `T` and `U`:
+
+```bash
+rbx86@rbx86:~/blog$ cat file1.txt 
+T
+rbx86@rbx86:~/blog$ cat file2.txt 
+U
+rbx86@rbx86:~/blog$ hexdump -C file1.txt 
+00000000  54 0a                                             |T.|
+00000002
+rbx86@rbx86:~/blog$ hexdump -C file2.txt 
+00000000  55 0a                                             |U.|
+00000002
+rbx86@rbx86:~/blog$ md5sum *.txt
+8f898b22d33b4ae6b360ec4725a2d646  file1.txt
+c03b74ce71730958d41ea3cf66bdd775  file2.txt
+```
+
+Despite only having a single-bit variation between the two letters, their computed hash value varied significantly!
+
+Anothing thing to note is that hash functions are **one-way functions**, this means that it's impossible/computationally impractical to go from an output to its input. This is what makes them great for storing passwords. Here's an example; when you switch from one user to another within the current shell session using `su`, it prompts for a password. How does it validate this password?
+
+By default, Linux stores its user's passwords in `/etc/shadow`, but not as its plaintext, but as a hash value. The hash function may vary depending on your distro, but a lot of them use the **yescrypt hash** denoted by the `$y$` prefix in the hash value. Try it for yourself!
+
+```bash
+rbx86@rbx86:~/blog$ sudo cat /etc/shadow
+[sudo] password for rbx86:
+rbx86:$y$j9T$REDACTED$REDACTED:19784:0:99999:7:::
+```
+
+So when you type your password when prompted, it's hashed by `libcrypt` and campared with the one stored in `/etc/shadow`.
+
+#### Hash Collisions and the Pigeonhole Effect
+
+A **hash collision** happens when 2 inputs produce the same hashed output.
+
+### Sources
+
+- pwn.college's Linux Luminarium - Untangling users: [https://pwn.college/linux-luminarium/users/](https://pwn.college/linux-luminarium/users/)
+- TryHackMe's Hashing Basics room: []()
+- TryHashMe's John the Ripper: The Basics room: []()

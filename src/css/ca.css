@@ -29,10 +29,19 @@
 
 /* Sidebar styling */
 [data-theme='dark'] .theme-doc-sidebar-container {
-   background-color: #1a1b1a; 
+  /* background-color: #1a1b1a; */
   /* background-color: #100f0f; */
   border-right: 1px solid #3c3836;
+  background-image: 
+  linear-gradient(rgba(29, 32, 33, 0.4), rgba(29, 32, 33, 0.4)),
+  url("/img/stars.gif");
+  backdrop-filter: blur(3px);
+  /* url("https://www.transparenttextures.com/patterns/polonez-pattern.png"); */
 }
+
+/* [data-theme='dark'] .col--3{
+  background-image: url("/img/stars.gif");
+} */
 
 /* Navbar */
 [data-theme='dark'] .navbar {
@@ -94,22 +103,6 @@
   border-top: 1px solid #3c3836;
 }
 
-body {
-  font-family: "Inter", "Segoe UI", Roboto, Oxygen, sans-serif !important;
-  font-size: 16px;
-  letter-spacing: 0.1px;
-}
-
-h1, h2, h3, h4 {
-  font-family: "Inter", "Segoe UI", Roboto, sans-serif !important;
-  font-weight: 650;
-  letter-spacing: 0.3px;
-}
-
-code, pre {
-  font-family: "JetBrains Mono", "Fira Code", monospace !important;
-  font-size: 14px;
-}
 
 
 .temp{
