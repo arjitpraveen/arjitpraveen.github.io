@@ -222,7 +222,7 @@ rbx86@rbx86:~/blog$ sudo cat /etc/shadow
 [sudo] password for rbx86:
 rbx86:$y$j9T$REDACTED$REDACTED:19784:0:99999:7:::
 ```
-
+    
 So when you type your password when prompted, it's hashed by `libcrypt` and campared with the one stored in `/etc/shadow`.
 
 #### Hash Collisions and the Pigeonhole Effect
@@ -234,3 +234,5 @@ A **hash collision** happens when 2 inputs produce the same hashed output.
 - pwn.college's Linux Luminarium - Untangling users: [https://pwn.college/linux-luminarium/users/](https://pwn.college/linux-luminarium/users/)
 - TryHackMe's Hashing Basics room: []()
 - TryHashMe's John the Ripper: The Basics room: []()
+
+
