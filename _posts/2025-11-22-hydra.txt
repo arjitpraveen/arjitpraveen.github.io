@@ -73,7 +73,7 @@ hydra -L usernames.txt -P passwords.txt ssh://192.168.1.4
 
 My favourite wordlist for passwords is the rockyou wordlist! You can find it in `/usr/share/wordlists/rockyou.xt.gz` on Kali Linux. 
 
-![](/img-archive/rockyou.png)
+<!-- ![](/img-archive/rockyou.png) -->
 
 You can otherwise download it from the official repo using `wget`
 
