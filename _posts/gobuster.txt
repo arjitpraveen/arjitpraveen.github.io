@@ -1,0 +1,146 @@
+---
+sidebar_label: "Gobuster Basics"
+sidebar_position: 4
+---
+
+# Gobuster Basics
+
+Gobuster is used for enumerating directories and DNS subdomains, among other things, by brute force using specific wordlists. 
+
+```bash
+gobuster --help
+```
+
+```bash
+USAGE:
+   gobuster command [command options]
+
+COMMANDS:
+   dir      Uses directory/file enumeration mode
+   vhost    Uses VHOST enumeration mode (you most probably want to use the IP address as the URL parameter)
+   dns      Uses DNS subdomain enumeration mode
+   fuzz     Uses fuzzing mode. Replaces the keyword FUZZ in the URL, Headers and the request body
+   tftp     Uses TFTP enumeration mode
+   s3       Uses aws bucket enumeration mode
+   gcs      Uses gcs bucket enumeration mode
+   help, h  Shows a list of commands or help for one command
+```
+
+## Directory enumeration `dir`
+
+**Directory enumeration/brute-forcing** is the process of discovering hidden or non-linked directories, files, and endpoints on a web server by sending HTTP requests with common directory/file names from a wordlist and analyzing the server’s responses (usually HTTP status codes) to determine which paths actually exist.
+. These resources are sometimes intentionally hidden for “security through obscurity” or simply forgotten by developers.  This is used in the reconnaissance stage of the **cyber kill chain**.
+
+:::tip
+To learn more about HTTP response codes check out [HTTP Cats](https://http.cat/)
+:::
+
+Here's an example:
+
+```bash
+gobuster dir -u "http://www.somewebsite.com/" -w /usr/share/wordlists/dirb/small.txt -t 64
+```
+
+- `dir` specifies directory/file enumeration mode
+- `-u "http://www.somewebsite.com/"` tells gobuster that the target url us `http://somewebsite.com/`
+- `-w /usr/share/wordlists/dirb/small.txt` directs gobuster to use the small.txt wordlist to brute force the web directories. Gobuster does this by sending a GET request to the URL, eg. `http://www.somewebsite.come/images`
+- `-t 64` sets the number of threads used. Improves performance.
+
+Additionally we can use the `--debug` flag to troubleshoot and `--output/-o`to write the enumeration results into a file of our choice. Other useful flags:
+
+| Flag | Long Flag               | Description|
+|:------:|-------------------------|------------|
+| `-c`   | --cookies               | configures a cookie to pass along each request, such as a session ID.|
+| `-x`   | --extensions            | specifies file extensions to scan for. E.g., `.php`, `.js`|
+| `-H`   | --headers               | configures an entire header to pass with each request.|
+| `-k`   | --no-tls-validation     | skips the process that checks the certificate when HTTPS is used. Useful for CTFs or test rooms using self-signed certificates, which would otherwise cause TLS errors.|
+| `-n`   | --no-status             | Hides status codes of each response to keep output clean.|
+| `-P`   | password                | Used with `--username` to perform authenticated requests. Helpful when you’ve obtained user credentials.|
+| `-s`   | --status-codes          | Configure which status codes to display (e.g., `200` or a range like `300-400`).|
+| `-b`   | --status-codes-blacklist| Configure which codes **not** to display. Overrides the `-s` flag.|
+| `-U`   | --username              | Used with `--password` to perform authenticated requests. Helpful when you’ve obtained user credentials.|
+| `-r`   | --followredirect        | Instructs Gobuster to follow HTTP redirects (e.g., `301`, `302`).|
+
+## Subdomain Enumeration `dns`
+
+We can enumerate subdomains using the `dns` mode with the following syntax:
+
+```bash
+gobuster dns -d mydomain.rbx -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt --resolver <SOME_IP_ADDR>
+```
+
+- `gobuster dns` enumerates subdomains on a configured domain.
+- `-d mydomain.rbx` sets the target to the `mydomain.rbx` domain
+- `-w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt` sets the wordlist to `subdomains-top1million-5000.txt`. Gobuster uses each entry of this list to construct a new DNS query. If the first entry of this list is 'admin', the query would be `admin.mydomain.thm`.
+
+Other useful flags:
+
+|Flag|Long Flag|Description|
+|---|---|---|
+|`-c`|--show-cname|Show CNAME Records (cannot be used with the `-i` flag).|
+|`-i`|--show-ips|shows IP addresses that the domain and subdomains resolve to.|
+|`-r`|--resolver|configures a custom DNS server to use for resolving.|
+|`-d`|--domain|configures the domain you want to enumerate.|
+
+## Vhost enumeration `vhost`
+
+We can use the `vhost` mode to brute force virtual hosts.
+
+---
+
+A virtual host (or vhost) is a way for one single web server (running on one IP address) to host multiple different websites at the same time. Take the analogy of a building (web server) which has one street address (IP address) but inside it are many separate apartments (websites), and when you knock on the door you have to say which apartment you want, this is the `Host:` header.
+
+When your browser visits a website, it sends a request like this:
+
+```http
+GET / HTTP/1.1
+Host: rbx86.com
+```
+And the web server looks at the `Host:` header and serves files from wherever the websited is hosted from, like  `/var/www/rbx86.com`
+
+Type|How it works|Most common today?|
+|---|---|---|
+Name-based vhosts|Uses the Host: header (what Gobuster vhost mode attacks)|Yes|
+|IP-based vhosts|Different site per IP address|Rare now|
+
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x5fWSWdM4F8?si=EPQoDyUWo4Jx8uEh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</center>
+
+---
+
+Having said that, real subdomains live in DNS records. Virtual hosts live only in the web server config (Apache/Nginx) and are distinguished by the Host: header. That’s why Gobuster’s vhost mode doesn’t do DNS lookups – it just changes the Host: header on every request and looks for different responses.
+
+```bash
+gobuster vhost -u http://example.thm -w wordlist.txt
+```
+
+When DNS isn't set up:
+
+```bash
+gobuster vhost -u http://IP_ADDRESS \
+  -w /usr/share/wordlists/subdomains-top1million-5000.txt \
+  --domain rbx86.com --append-domain \
+  --exclude-length 250-320
+```
+
+- `-u`: target IP or domain (no subdomain needed)
+- `--domain example.thm`: base domain to append
+- `--append-domain`: turns “admin” to “admin.rbx86.com” in the Host header 
+- `--exclude-length`: filters out generic error pages (reduces false positives)
+
+### Subdomain enumeration with `dns` vs. Vhost enumeration with `vhost`
+
+|DNS Mode|VHOST Mode|
+|---|---|
+|Enumerates DNS records (real subdomains that exist in DNS)|Enumerates virtual hosts hosted on the same IP, even if DNS does NOT contain them.|
+|It looks for actual DNS entries that resolve.|It brute-forces hostnames by placing them in the HTTP Host header|
+|Finding public subdomains.|Finding hidden websites on the same server|
+
+---
+
+## Sources:
+
+- THM's Gobuster: The Basics room: [https://tryhackme.com/room/gobusterthebasics](https://tryhackme.com/room/gobusterthebasics)
