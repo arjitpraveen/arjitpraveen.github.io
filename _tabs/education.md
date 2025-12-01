@@ -14,11 +14,14 @@ order: 5
 - Architecture 4001: x86-64 Intel Firmware Attack & Defense - Xeno Kovah
 - 18.03SC: Differential Equations - Prof. Arthur Mattuck
 - 18.330: Introduction to Numerical Analaysis - Prof. Laurent Demanet
+- SOE-YCSCS1: Compilers
 
-## Certifications
+## Certifications/Certificates
 
 - CompTIA Security+ (In progress)
 - Offensive Security Professional Certification (OSCP) (In progress)
+- TryHackMe Cyber Security 101 (In progress)
+- TryHackMe Jr Penetration Tester (In progress)
 
 ## Readings
 
