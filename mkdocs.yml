@@ -1,25 +1,118 @@
 site_name: Arjit's Blog
 site_url: https://arjitpraveen.github.io
+site_author: Arjit Praveen
 repo_url: https://github.com/arjitpraveen/arjitpraveen.github.io
 repo_name: arjitpraveen/arjitpraveen.github.io
+
+# ============================= theme ===========================
 theme:
   name: material
   favicon: assets/images/bitmap.svg
   logo: assets/images/bitmap.svg
   icon:
     repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
   features:
     - header.autohide
+    - navigation.top
     - navigation.tabs
-    # - navigation.tabs.sticky
     - navigation.instant
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.path
+    - toc.follow
+    - search.suggest
+    - navigation.footer
     - content.code.annotate
     - content.code.copy
-    - navigation.top
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: indigo
+      accent: deep orange
   font:
     code: Roboto Mono
+# ===============================================================
+
+# ================ markdown extensions & plugins ================
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - tables
+  - pymdownx.betterem
+  - pymdownx.blocks.caption
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      line_spans: __span
+      auto_title: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - toc:
+      permalink: true
+      title: On this page
+  
+plugins:
+  - blog
+  - typeset
+  - search
+# ===============================================================
+
+# ======================= navigation & footer =======================
+
+nav:
+  - Home: index.md
+  - Projects: 
+    - CHIP-8 emulator: 
+      - Introduction: "Projects/chip8-emulator/intro.md"
+  - Blog:
+    - blog/index.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/mastodon 
+      link: https://fosstodon.org/@squidfunk
+copyright: Copyright &copy; 2016 - 2020 Martin Donath
+
+# ===================================================================
+
+extra_css:
+  - assets/stylesheets/extra.css
+extra_javascript:
+  - assets/javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+
+
+  
