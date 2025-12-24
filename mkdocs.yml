@@ -1,0 +1,25 @@
+site_name: Arjit's Blog
+site_url: https://arjitpraveen.github.io
+repo_url: https://github.com/arjitpraveen/arjitpraveen.github.io
+repo_name: arjitpraveen/arjitpraveen.github.io
+theme:
+  name: material
+  favicon: assets/images/bitmap.svg
+  logo: assets/images/bitmap.svg
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - header.autohide
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.instant
+    - content.code.annotate
+    - content.code.copy
+    - navigation.top
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+  font:
+    code: Roboto Mono
