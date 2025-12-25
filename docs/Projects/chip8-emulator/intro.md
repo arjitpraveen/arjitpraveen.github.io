@@ -1,23 +1,12 @@
 ---
 title: Introduction
-icon: material/format-title
 ---
 
 #  Introduction 
 
-# Built-in typeset plugin
+CHIP-8 is a virtual machine, much like Java is. It was originally made to run on 8-bit microcomputers like the COSMAC VIP and the Telmac 1800. People would write programs for it, which could run on different machines as long as they had an interpreter.
 
-## hjh
+For this project I've made a CHIP-8 emulator, which is really just the interpreter since it doesn't emulate a hardware system of the sorts. It's fairly simple and fun to make. It's kinda like the "hello world" to emulator development.
 
-### dfldjvkmlsfm
+## How does a CPU work?
 
-The typeset plugin allows to preserve the enriched presentation of titles and
-headlines within the navigation and table of contents. This means that code
-blocks, icons, emojis and any other inline formatting can be rendered exactly
-as defined in the page's content.
-
-!!! danger 
-
-```python
-print("hello world")
-```
