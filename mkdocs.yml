@@ -7,8 +7,9 @@ repo_name: arjitpraveen/arjitpraveen.github.io
 # ============================= theme ===========================
 theme:
   name: material
-  favicon: assets/images/bitmap.svg
-  logo: assets/images/bitmap.svg
+  favicon: assets/images/VPW86.png
+  # logo: assets/images/text331.svg
+  logo: "assets/images/text1.svg"
   icon:
     repo: fontawesome/brands/github
     admonition:
@@ -30,7 +31,7 @@ theme:
     - navigation.tabs
     - navigation.instant
     - navigation.instant.progress
-    - navigation.sections
+    # - navigation.sections
     - navigation.path
     - toc.follow
     - search.suggest
@@ -96,6 +97,7 @@ nav:
   - Projects: 
     - CHIP-8 emulator: 
       - Introduction: "Projects/chip8-emulator/intro.md"
+      - Setup: "Projects/chip8-emulator/setup.md"
   - Blog:
     - blog/index.md
 
@@ -103,7 +105,7 @@ extra:
   social:
     - icon: fontawesome/brands/mastodon 
       link: https://fosstodon.org/@squidfunk
-copyright: Copyright &copy; 2016 - 2020 Martin Donath
+copyright: Made with 💖 by Arjit Praveen 
 
 # ===================================================================
 
