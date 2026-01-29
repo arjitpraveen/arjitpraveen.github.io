@@ -21,7 +21,6 @@ const { title, author, cover, status } = Astro.props
     loading="lazy"
   />
 
-  <!-- Fixed-height text block -->
   <div class="min-h-[3.25rem]">
     <div class="text-sm font-medium leading-tight line-clamp-2">
       {title}
@@ -32,7 +31,6 @@ const { title, author, cover, status } = Astro.props
     </div>
   </div>
 
-  <!-- Status badge (now aligned across all cards) -->
   <div class="mt-1 self-start">
     <BookStatusBadge status={status} />
   </div>

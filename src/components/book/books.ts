@@ -17,37 +17,49 @@ export const books: {
 } = {
   academic: [
     {
-      title: "Introduction to Algorithms",
-      author: "Cormen, Leiserson, Rivest, Stein",
-      cover: "https://images-na.ssl-images-amazon.com/images/I/41as+WafrFL._SX258_BO1,204,203,200_.jpg",
+      title: "Black Hat Rust",
+      author: "Sylvian Kerkour",
+      cover: "https://raw.githubusercontent.com/skerkour/black-hat-rust/refs/heads/main/black_hat_rust_cover.png",
       status: "reading",
     },
     {
       title: "Operating Systems: Three Easy Pieces",
-      author: "Remzi H. Arpaci-Dusseau & Andrea C. Arpaci-Dusseau",
-      cover: "https://imgs.search.brave.com/k9mnyUM7norSlMVWawjCbH9mq6I-2j_ooZ0V-fuFlB0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFsVHNELUxHb0wu/anBn",
-      status: "to-read",
+      author: "Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-Dusseau",
+      cover: "https://assets.lulu.com/cover_thumbs/1/5/15gjeeky-front-shortedge-384.jpg",
+      status: "reading",
     },
     {
-      title: "Computer Networking: A Top-Down Approach",
-      author: "Kurose & Ross",
-      cover: "https://images-na.ssl-images-amazon.com/images/I/51x5NY1kE+L._SX396_BO1,204,203,200_.jpg",
-      status: "finished",
+      title: "Real-World Bug Hunting",
+      author: "Peter Yaworski",
+      cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1562033029i/35545851.jpg",
+      status: "to-read",
     },
   ],
 
   fiction: [
     {
-      title: "1984",
-      author: "George Orwell",
-      cover: "https://images-na.ssl-images-amazon.com/images/I/41KD2-7-PNL._SX324_BO1,204,203,200_.jpg",
+      title: "The Three Body Problem",
+      author: "Cixin Liu",
+      cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1415428227i/20518872.jpg",
+      status: "reading",
+    },
+    {
+      title: "Not Quite a Ghost",
+      author: "Anne Ursu",
+      cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1688837638i/134221625.jpg",
+      status: "reading",
+    },
+    {
+      title: "The Electric State",
+      author: "Simon Stålenhag",
+      cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1512342315i/36836025.jpg",
       status: "finished",
     },
     {
-      title: "Dune",
-      author: "Frank Herbert",
-      cover: "https://images-na.ssl-images-amazon.com/images/I/51aEhwAtYaL._SX320_BO1,204,203,200_.jpg",
-      status: "to-read",
+      title: "The Epic of Gilgamesh",
+      author: "Andrew George (tranlsated)",
+      cover: "/books/9780140449198.jpg",
+      status: "reading",
     },
   ],
 }
