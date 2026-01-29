@@ -1,0 +1,93 @@
+/* @tailwindcss */
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme inline {
+  --font-sans:
+    /* Geist, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; */
+    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  --font-mono:
+    /* Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace; */
+    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono[wght].woff2') format('woff2-variations');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Italic[wght].woff2') format('woff2-variations');
+  font-weight: 100 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --background: oklch(0.1722 0.0041 75);
+  --foreground: oklch(0.947 0.0414 75);
+  --primary: oklch(0.80 0.12 145);
+  --primary-foreground: oklch(0.209 0.006 75);
+  --muted: oklch(0.209 0.006 75);
+  --muted-foreground: oklch(0.6814 0.0243 75);
+  --destructive: oklch(0.704 0.191 22);
+  --border: oklch(0.3074 0.0087 75);
+  --ring: oklch(0.4856 0.0171 75);
+}
+
+
+[data-theme='dark'] {
+  --background: oklch(0.18 0.002 75);
+  --foreground: oklch(0.95 0.02 75);
+  --primary: oklch(0.80 0.12 145);
+  --primary-foreground: oklch(0.18 0.02 75);
+  --muted: oklch(0.22 0.004 75);
+  --muted-foreground: oklch(0.68 0.02 75);
+  --border: oklch(0.30 0.008 75);
+  --ring: oklch(0.52 0.08 145);
+  --destructive: oklch(0.71 0.19 22);
+}
+
+.about-bg {
+  background-color: var(--color-muted);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.btn-bg {
+  background-color: var(--color-muted);
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    @apply border-border outline-ring/50 tracking-tight;
+  }
+}

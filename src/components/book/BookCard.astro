@@ -1,0 +1,39 @@
+---
+import BookStatusBadge from './BookStatusBadge.astro'
+import type { BookStatus } from './books'
+
+interface Props {
+  title: string
+  author: string
+  cover: string
+  status: BookStatus
+}
+
+const { title, author, cover, status } = Astro.props
+---
+
+<div class="flex w-40 shrink-0 flex-col gap-2">
+  <!-- Cover -->
+  <img
+    src={cover}
+    alt={title}
+    class="aspect-[3/4] w-full rounded-lg object-cover"
+    loading="lazy"
+  />
+
+  <!-- Fixed-height text block -->
+  <div class="min-h-[3.25rem]">
+    <div class="text-sm font-medium leading-tight line-clamp-2">
+      {title}
+    </div>
+
+    <div class="text-xs text-muted-foreground line-clamp-1">
+      {author}
+    </div>
+  </div>
+
+  <!-- Status badge (now aligned across all cards) -->
+  <div class="mt-1 self-start">
+    <BookStatusBadge status={status} />
+  </div>
+</div>

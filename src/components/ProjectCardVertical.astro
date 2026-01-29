@@ -1,0 +1,77 @@
+---
+import Link from '@/components/Link.astro'
+// import { Badge } from '@/components/ui/badge'
+import { formatDate } from '@/lib/utils'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import type { CollectionEntry } from 'astro:content'
+import Badge from '@/components/Badge.astro' 
+
+// ===================== CHANGELOG =====================
+// This is a direct replacement for @/components/ProjectCard.astro
+// Replaced in @/pages/about.astro
+// =====================================================
+
+interface Props {
+  project: CollectionEntry<'projects'>
+}
+
+const { project } = Astro.props
+---
+
+<div
+  class="hover:bg-muted/50 rounded-xl border p-4 transition-colors duration-300 ease-in-out about-bg"
+>
+  <Link href={project.data.link} external class="flex flex-col gap-4">
+    <!-- Image on top -->
+    {
+      project.data.image && (
+        <div class="overflow-hidden rounded-lg">
+          <Image
+            src={project.data.image}
+            alt={project.data.name}
+            width={1200}
+            height={630}
+            class="aspect-video w-full object-cover"
+          />
+        </div>
+      )
+    }
+
+    <!-- Content -->
+    <div>
+      <h3 class="mb-1 text-lg font-medium">
+        {project.data.name}
+      </h3>
+
+      <p class="mb-2 text-sm text-muted-foreground">
+        {project.data.description}
+      </p>
+
+      {
+        project.data.startDate && (
+          <p class="mb-2 flex items-center gap-x-1.5 text-xs text-muted-foreground/70">
+            <Icon name="lucide:calendar" class="size-3" />
+            <span>
+              {formatDate(project.data.startDate)}
+              {project.data.endDate
+                ? ` → ${formatDate(project.data.endDate)}`
+                : ' → Present'}
+            </span>
+          </p>
+        )
+      }
+
+      {
+        project.data.tags && (
+          <div class="flex flex-wrap gap-2">
+            {project.data.tags.map((tag: string) => (
+              // <Badge variant="muted">{tag}</Badge>
+               <Badge text={tag} />
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </Link>
+</div>

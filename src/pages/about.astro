@@ -1,0 +1,98 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Link from '@/components/Link.astro'
+import SocialIcons from '@/components/SocialIcons.astro'
+import AvatarComponent from '@/components/ui/avatar'
+import Layout from '@/layouts/Layout.astro'
+
+import { SOCIAL_LINKS } from '@/consts'
+import { getAllProjects } from '@/lib/data-utils'
+import ProjectCardVertical from '@/components/ProjectCardVertical.astro'
+
+import BookRow from '@/components/book/BookRow.astro'
+import { books } from '@/components/book/books'
+
+const projects = await getAllProjects()
+---
+
+<Layout title="About">
+  <!-- Page wrapper (same as index) -->
+  <div class="px-4 ">
+    <div class="mx-auto max-w-screen-lg">
+      
+      <!-- Breadcrumbs -->
+      <div class="mt-8 mb-8">
+        <Breadcrumbs items={[{ label: 'About' }]} />
+      </div>
+
+      <!-- ABOUT SECTION -->
+      <section class="mb-20">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          
+          <!-- Sidebar -->
+          <aside
+            class="flex flex-col items-center gap-4
+                   rounded-xl bg-secondary/50 p-6 btn-bg  justify-center-safe"
+          >
+            <AvatarComponent
+              client:load
+              src="/644129_ZfmGnfad.png"
+              alt="Arjit"
+              fallback="A"
+              className="size-40 rounded-full lg:size-48"
+            />
+
+            <h2 class="text-2xl font-bold">Arjit (he/him)</h2>
+
+            <p class="text-center text-sm text-muted-foreground">
+              CS | Cybersecurity | CTFs
+            </p>
+
+            <SocialIcons links={SOCIAL_LINKS} />
+          </aside>
+
+          <!-- Bio -->
+          <div
+            class="rounded-xl bg-secondary/50
+                   p-5 sm:p-6 lg:p-8
+                   lg:col-span-2 btn-bg"
+          >
+            <div class="prose max-w-none dark:prose-invert">
+              <p>
+                A year ago if you told me that I'd be into cybersecurity, I would've never believed you. Truth be told, I never thought much of it until I came across the animated series <Link href="https://www.imdb.com/title/tt11680642/" underline class="text-primary">Pantheon</Link>. I remember watching an episode where one of the <Link href="https://pantheon-amc.fandom.com/wiki/Uploaded_Intelligence" underline class="text-primary">UIs</Link> performed a DDoS attack on a multinational corporate tech company and thought to myself, <i>"Holy shit that's so cool, but also what the hell is a DDoS attack?"</i>. Looking it up took me down a deep rabbit hole of netsec and of course, hacking.
+              </p>
+
+              <p>
+                One thing led to another and I found myself searching up "Hacking courses" where I then came across <Link href="https://tryhackme.com/" underline class="text-primary">TryHackMe</Link>. Did a few modules and completed the Jr. Penetration Tester path before finding out about <Link href="https://academy.hackthebox.com/" underline class="text-primary">HackTheBox</Link>, where I now spend most of my time digesting content and grinding labs. Not too long after that, I started participating in CTFs and writing contents in my spare time, all of which you can now find on this blog :3
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      {projects.length > 0 && (
+        <section class="mb-20">
+          <h2 class="mb-6 text-2xl font-semibold">Projects</h2>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {projects.map((project) => (
+              <ProjectCardVertical project={project} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- BOOKS -->
+      <section class="mb-20">
+        <h2 class="mb-6 text-2xl font-semibold">Bookshelf</h2>
+
+        <div class="flex flex-col gap-10">
+          <BookRow title="Academic" books={books.academic} />
+          <BookRow title="Fiction & Others" books={books.fiction} />
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

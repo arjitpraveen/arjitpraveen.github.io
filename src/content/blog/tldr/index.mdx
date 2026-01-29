@@ -1,0 +1,44 @@
+---
+title: 'TL;DR: Windows AD & Kerberos'
+description: 'Condensed notes for reference.'
+date: 2026-01-25
+tags: ['tl;dr', 'windows', 'AD']
+# image: './banner.png'
+authors: ['arjit']
+---
+
+import Callout from '@/components/Callout.astro'
+import Challenge from '@/components/mdx/Challenge.astro'
+
+## What is Active Directory?
+
+<Callout title="What's a code block?" variant='warning'>
+
+This is a code block, which is inside a callout.
+
+```python title="main.py"
+print("hello world")
+```
+
+</Callout>
+
+
+<Challenge
+  title="gcd-query-v1"
+  authors={['Arjit']}
+  solvers={[
+    {
+      name: 'arjit',
+      href: 'https://github.com/arjitpraveen',
+      avatar: '/644129_ZfmGnfad.png',
+    },
+  ]}
+  category="tl;dr"
+  points={475}
+  solves={43}
+  flag="amateursCTF{probabilistic_binary_search_ftw}"
+>
+  I wonder if this program leaks enough information for you to get the flag with
+  less than 2048 queries... It probably does. I'm sure you can figure out how.
+  `nc amt.rs 31692`
+</Challenge>

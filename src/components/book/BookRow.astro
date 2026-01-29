@@ -1,0 +1,31 @@
+---
+import BookCard from './BookCard.astro'
+import type { Book } from '@/components/book/books'
+
+interface Props {
+  title: string
+  books: Book[]
+}
+
+const { title, books } = Astro.props
+
+const ORDER = ['reading', 'to-read', 'finished', 'dropped']
+
+const sortedBooks = [...books].sort(
+  (a, b) => ORDER.indexOf(a.status) - ORDER.indexOf(b.status)
+)
+---
+
+<section>
+  <h3 class="mb-3 text-xl font-semibold">{title}</h3>
+
+  <div
+    class="flex gap-4 overflow-x-auto scroll-smooth
+           [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
+           btn-bg rounded-lg px-4 py-3"
+  >
+    {sortedBooks.map((book) => (
+      <BookCard {...book} />
+    ))}
+  </div>
+</section>
