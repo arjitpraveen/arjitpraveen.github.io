@@ -34,6 +34,12 @@ export const books: {
       cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1562033029i/35545851.jpg",
       status: "to-read",
     },
+    {
+      title: "Calculus: Early Transcendentals (8th Edition)",
+      author: "James Stewart",
+      cover: "/books/calc_james.png",
+      status: "reading",
+    },
   ],
 
   fiction: [
@@ -56,10 +62,46 @@ export const books: {
       status: "finished",
     },
     {
-      title: "The Epic of Gilgamesh",
-      author: "Andrew George (tranlsated)",
-      cover: "/books/9780140449198.jpg",
-      status: "reading",
+      title: "Foucault's Pendulum",
+      author: "Umbert Eco",
+      cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1396645125i/17841.jpg",
+      status: "to-read",
     },
+    {
+      title: "The Dark Forest",
+      author: "Cixin Liu",
+      cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1412064931i/23168817.jpg",
+      status: "to-read",
+    },
+    {
+      title: "Death's End",
+      author: "Cixin Liu",
+      cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1430330507i/25451264.jpg",
+      status: "to-read",
+    },
+    {
+      title: "Tales from the Loop",
+      author: "Simon Stålenhag",
+      cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1686718960i/27404461.jpg",
+      status: "finished",
+    },
+    {
+      title: "Things from the Flood",
+      author: "Simon Stålenhag",
+      cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1468380755i/31094296.jpg",
+      status: "finished",
+    },
+    {
+      title: "The Labyrinth",
+      author: "Simon Stålenhag",
+      cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1607931640i/55818839.jpg",
+      status: "finished",
+    },
+    // {
+    //   title: "Europa Mekano",
+    //   author: "Simon Stålenhag",
+    //   cover: "https://simonstalenhag.se/new/bilderbig/ark_euromek_big.jpg",
+    //   status: "to-read",
+    // },
   ],
 }
