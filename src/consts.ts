@@ -4,7 +4,7 @@ export const SITE: Site = {
   title: 'arjit',
   description:
     'Personal website to record learing progress.',
-  href: 'https://arjitpraveen.github.io',
+  href: 'https://chr0mazone.github.io',
   author: 'arjit',
   locale: 'en-US',
   featuredPostCount: 4,
@@ -36,17 +36,17 @@ export const NAV_LINKS: SocialLink[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: 'https://github.com/jktrn',
+    href: 'https://github.com/chr0mazone',
     label: 'GitHub',
   },
   {
-    href: 'https://twitter.com/enscry',
+    href: 'https://www.linkedin.com/in/arjitpraveen/',
     label: 'LinkedIn',
   },
-  {
-    href: 'mailto:jason@enscribe.dev',
-    label: 'Email',
-  },
+  // {
+  //   href: 'mailto:jason@enscribe.dev',
+  //   label: 'Email',
+  // },
   // {
   //   href: '/rss.xml',
   //   label: 'RSS',
