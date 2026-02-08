@@ -47,7 +47,7 @@ export default defineConfig({
       [
         rehypeExpressiveCode,
         {
-          themes: ['github-dark'],
+          themes: ['vesper'],
           plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
           useDarkModeMediaQuery: false,
           themeCssSelector: (theme: ExpressiveCodeTheme) =>
@@ -64,6 +64,7 @@ export default defineConfig({
           },
           styleOverrides: {
             codeFontSize: '0.75rem',
+            borderRadius: '0px', 
             borderColor: 'var(--border)',
             codeFontFamily: 'var(--font-mono)',
             codeBackground:
