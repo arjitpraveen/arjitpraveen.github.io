@@ -5,10 +5,12 @@
 
 @theme inline {
   --font-sans:
-    /* Geist, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; */
-    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
+    Geist, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    /* 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace; */
+    /* 'Inter', ui-sans-serif, system-ui, sans-serif, */
+    /* 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; */
   --font-mono:
     /* Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace; */
@@ -49,6 +51,7 @@
 
 :root {
   --background: oklch(0.1722 0.0041 75);
+  /* --background:#181818; */
   --foreground: oklch(0.947 0.0414 75);
   --primary: oklch(0.80 0.12 145);
   --primary-foreground: oklch(0.209 0.006 75);
@@ -62,6 +65,7 @@
 
 [data-theme='dark'] {
   --background: oklch(0.18 0.002 75);
+  /* --background:#131313; */
   --foreground: oklch(0.95 0.02 75);
   --primary: oklch(0.80 0.12 145);
   --primary-foreground: oklch(0.18 0.02 75);
