@@ -135,7 +135,7 @@ const calloutConfig = {
 
 const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
 
-const calloutVariants = cva('relative px-4 py-3 my-6 border-l-4 text-sm', {
+const calloutVariants = cva('relative px-4 py-3 my-6 border-1 text-sm rounded-lg', {
   variants: {
     variant: Object.fromEntries(
       Object.entries(calloutConfig).map(([key, config]) => [key, config.style]),
@@ -163,7 +163,7 @@ const { title, variant = 'note', defaultOpen = true, ...rest } = Astro.props
     '[&[open]>summary_svg:last-child]:rotate-180 [&[open]>summary]:mb-3',
   )}
   {...rest}
-  open={defaultOpen}
+  {...(defaultOpen ? { open: true } : {})}
 >
   <summary
     class="flex cursor-pointer items-center font-medium [&::-webkit-details-marker]:hidden"
@@ -176,7 +176,7 @@ const { title, variant = 'note', defaultOpen = true, ...rest } = Astro.props
       {capitalize(variant)}
       {title && <span class="font-normal opacity-70"> ({title})</span>}
     </span> -->
-    <span class={cn('font-medium mr-2', calloutConfig[variant].textColor)}>
+    <span class={cn('font-medium mr-2 text-lg', calloutConfig[variant].textColor)}>
       {title || capitalize(variant)}
     </span>
     <Icon
