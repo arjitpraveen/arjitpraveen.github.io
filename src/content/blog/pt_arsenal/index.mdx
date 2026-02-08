@@ -1,0 +1,116 @@
+---
+title: 'My pentesting arsenal'
+description: 'Tools and services I use'
+date: 2026-02-05
+tags: ['personal']
+# image: './banner.png'
+draft: true
+authors: ['arjit']
+---
+
+import Callout from '@/components/Callout.astro'
+
+
+# Recon & enumeration
+
+## [DNSDumpster](https://dnsdumpster.com/)
+
+## [Shodan.io](https://www.shodan.io/)
+
+### [Nmap](https://nmap.org/download.html#linux-rpm)
+
+```bash
+sudo dnf install nmap
+```
+### [Gobuster](https://github.com/OJ/gobuster)/[FFUF](https://github.com/ffuf/ffuf)
+
+Golang installation: [https://go.dev/dl/](https://go.dev/dl/)
+
+```bash
+mkdir ~/golangtemp && cd ~/golangtemp
+wget https://go.dev/dl/go1.25.7.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
+/usr/local/go/bin/go version # verification
+echo 'export PATH="$HOME/go/bin:/usr/local/go/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+go version # verification
+```
+
+```bash
+go install github.com/OJ/gobuster/v3@latest
+go install github.com/ffuf/ffuf/v2@latest
+```
+### [Bloodhound](https://github.com/SpecterOps/BloodHound?tab=readme-ov-file) (AD enumeration) | [Documentation](https://bloodhound.specterops.io/get-started/quickstart/community-edition-quickstart) | [SANS Guide](https://www.sans.org/blog/bloodhound-sniffing-out-path-through-windows-domains)
+
+
+
+
+
+---
+
+## Exploitation
+
+### [XSStrike](https://github.com/s0md3v/XSStrike)
+
+```bash
+mkdir ~/Tools && cd ~/Tools
+git clone https://github.com/s0md3v/XSStrike
+cd XSStrike
+python3 -m venv env && pip install -r requirements.txt
+```
+
+### [SQLMap](https://github.com/sqlmapproject/sqlmap) | [Docs](https://github.com/sqlmapproject/sqlmap/wiki/Introduction)
+
+```bash
+mkdir ~/Tools && cd ~/Tools
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+cd sqlmap-dev
+```
+
+### [NetExec](https://github.com/Pennyw0rth/NetExec)
+
+- [Wiki](https://www.netexec.wiki/)
+
+![](./netexec.png)
+
+slkfvnsdlfkjn
+
+```bash
+sudo dnf install -y pipx git
+pipx ensurepath
+pipx install git+https://github.com/Pennyw0rth/NetExec"
+```
+
+<Callout variant="warning">
+
+Running `pipx install git+https://github.com/Pennyw0rth/NetExec` might throw an error if your python version is incompatible with some dependencies. In that case, you'll need to use `pyenv` to switch between python versions. You must also suffix `pipx install git+https://github.com/Pennyw0rth/NetExec ` with `--python "$(pyenv which python)"` 
+
+```bash
+sudo dnf install -y libffi-devel sqlite-devel readline-devel ncurses-devel bzip2-devel xz-devel tk-devel
+pyenv install 3.13.2
+pyenv global 3.13.2
+```
+
+</Callout>
+
+
+### [linPEAS](https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS) (Run on compromised machine)
+
+```bash
+curl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh | sh
+```
+### Hydra/John the Ripper
+
+### Metasploit
+
+---
+## Misc
+
+### rockyou wordlist ([SecLists](https://github.com/danielmiessler/SecLists))
+
+```bash
+mkdir -p ~/Tools/wordlists && cd ~/Tools/wordlists
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Passwords/Leaked-Databases/rockyou.txt.tar.gz
+tar -xvzf rockyou.txt.tar.gz
+```

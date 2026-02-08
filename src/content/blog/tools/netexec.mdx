@@ -1,0 +1,52 @@
+---
+title: 'Netexec'
+description: 'Condensed notes for reference.'
+date: 2026-02-05
+tags: ['tl;dr', 'tools']
+# image: './banner.png'
+authors: ['arjit']
+---
+
+import Callout from '@/components/Callout.astro'
+
+# NetExec
+
+![](./assets/netexec.png)
+
+Network service exploitation tool. Supported protocols:
+
+```plaintext
+smb, ssh, ldap, ftp, wmi, winrm, rdp, vnc, mssql
+```
+
+## Installation
+
+```bash
+sudo dnf install -y pipx git
+pipx ensurepath
+pipx install git+https://github.com/Pennyw0rth/NetExec"
+```
+
+<Callout variant="warning" defaultOpen={false}>
+
+Running `pipx install git+https://github.com/Pennyw0rth/NetExec` might throw an error if your python version is incompatible with some dependencies. In that case, you'll need to use `pyenv` to switch between python versions. You must also suffix `pipx install git+https://github.com/Pennyw0rth/NetExec ` with `--python "$(pyenv which python)"` 
+
+```bash
+sudo dnf install -y libffi-devel sqlite-devel readline-devel ncurses-devel bzip2-devel xz-devel tk-devel
+pyenv install 3.13.2
+pyenv global 3.13.2
+```
+
+</Callout>
+
+## Host enumeration
+
+```txt title="hosts.txt"
+10.0.23.254
+10.0.26.16
+10.0.20.219
+```
+
+```bash
+nxc smb hosts.txt
+```
